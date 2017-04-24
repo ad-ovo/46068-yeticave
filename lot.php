@@ -1,5 +1,5 @@
 <?php
-    $bets = [
+    $bids = [
         ['name' => 'Иван', 'price' => 11500, 'ts' => strtotime('-' . rand(1, 50) .' minute')],
         ['name' => 'Константин', 'price' => 11000, 'ts' => strtotime('-' . rand(1, 18) .' hour')],
         ['name' => 'Евгений', 'price' => 10500, 'ts' => strtotime('-' . rand(25, 50) .' hour')],
@@ -10,16 +10,16 @@
         $time_diff = (time() - $ts) / 3600;
 
         if ($time_diff >= 24 ) {
-            $bet_time = date('d.m.y' . ' в ' . 'H:i', $ts);
+            $bid_time = date('d.m.y' . ' в ' . 'H:i', $ts);
         } else {
             if ( $time_diff < 1 ) {
-                $bet_time = date('i' . ' минут назад');
+                $bid_time = date('i' . ' минут назад');
             } else {
-                $bet_time = date('H' . ' часов назад');
+                $bid_time = date('H' . ' часов назад');
             }
         }
 
-        return $bet_time;
+        return $bid_time;
     }
 ?>
 
@@ -143,13 +143,13 @@
 
                 <div class="history">
                     <h3>История ставок (<span>4</span>)</h3>
-                    
-                    <?php foreach( $bets as $bet ) :?>
+
+                    <?php foreach( $bids as $bid ) :?>
                     <table class="history__list">
                         <tr class="history__item">
-                            <td class="history__name"><?=$bet['name'];?></td>
-                            <td class="history__price"><?=$bet['price'];?> р</td>
-                            <td class="history__time"><?=getTime($bet['ts']); ?></td>
+                            <td class="history__name"><?=$bid['name'];?></td>
+                            <td class="history__price"><?=$bid['price'];?> р</td>
+                            <td class="history__time"><?=getTime($bid['ts']); ?></td>
                         </tr>
                     </table>
                     <?php endforeach; ?>
