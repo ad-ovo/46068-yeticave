@@ -14,46 +14,46 @@ $now = time();
 // далее нужно вычислить оставшееся время до начала следующих суток и записать его в переменную $lot_time_remaining
 $lot_time_remaining = gmdate('H:i:s', $tomorrow - $now);
 
-$lot_category = array('Доски и лыжи', 'Крепления', 'Ботинки', 'Одежда', 'Инструменты', 'Разное');
+$lot_categories = ['Доски и лыжи', 'Крепления', 'Ботинки', 'Одежда', 'Инструменты', 'Разное'];
 
-$lot_items = array(
-    array(
+$lot_items = [
+    [
         'name' => '2014 Rossignol District Snowboard',
         'category' => 'Доски и лыжи',
         'price' => '10999',
         'imgUrl' => 'img/lot-1.jpg'
-    ),
-    array(
+    ],
+    [
         'name' => 'DC Ply Mens 2016/2017 Snowboard',
         'category' => 'Доски и лыжи',
         'price' => '159999',
         'imgUrl' => 'img/lot-2.jpg'
-    ),
-    array(
+    ],
+    [
         'name' => 'Крепления Union Contact Pro 2015 года размер L/XL',
         'category' => 'Крепления',
         'price' => '8000',
         'imgUrl' => 'img/lot-3.jpg'
-    ),
-    array(
+    ],
+    [
         'name' => 'Ботинки для сноуборда DC Mutiny Charocal',
         'category' => 'Ботинки',
         'price' => '10999',
         'imgUrl' => 'img/lot-4.jpg'
-    ),
-    array(
+    ],
+    [
         'name' => 'Куртка для сноуборда DC Mutiny Charocal',
         'category' => 'Одежда',
         'price' => '7500',
         'imgUrl' => 'img/lot-5.jpg'
-    ),
-    array(
+    ],
+    [
         'name' => 'Маска Oakley Canopy',
         'category' => 'Разное',
         'price' => '5400',
         'imgUrl' => 'img/lot-6.jpg'
-    ),
-);
+    ]
+];
 
 ?>
 <!DOCTYPE html>
@@ -119,7 +119,7 @@ $lot_items = array(
             <li class="promo__item promo__item--tools">
                 <a class="promo__link" href="all-lots.html">Инструменты</a>
             </li>
-            
+
             <li class="promo__item promo__item--other">
                 <a class="promo__link" href="all-lots.html">Разное</a>
             </li>
@@ -133,30 +133,29 @@ $lot_items = array(
             <select class="lots__select" title="Все категории">
                 <option>Все категории</option>
 
-                <?php for ($i = 0; $i < count($lot_category); $i++) { ?>
-                <option><?=$lot_category[$i];?></option>
-                <?php } ?>
-
+                <?php foreach($lot_categories as $lot_category):  ?>
+                <option><?=$lot_category;?></option>
+                <?php endforeach; ?>
             </select>
         </header>
 
         <ul class="lots__list">
-            <?php for ($i = 0; $i < count($lot_items); $i++) { ?>
+            <?php foreach($lot_items as $lot_item): ?>
 
             <li class="lots__item lot">
                 <div class="lot__image">
-                    <img src="<?=$lot_items[$i]['imgUrl'];?>" width="350" height="260" alt="Сноуборд">
+                    <img src="<?=$lot_item['imgUrl'];?>" width="350" height="260" alt="Сноуборд">
                 </div>
 
                 <div class="lot__info">
-                    <span class="lot__category"><?=$lot_items[$i]['category']?></span>
+                    <span class="lot__category"><?=$lot_item['category']?></span>
 
-                    <h3 class="lot__title"><a class="text-link" href=""><?=$lot_items[$i]['name'];?></a></h3>
+                    <h3 class="lot__title"><a class="text-link" href=""><?=$lot_item['name'];?></a></h3>
 
                     <div class="lot__state">
                         <div class="lot__rate">
                             <span class="lot__amount">Стартовая цена</span>
-                            <span class="lot__cost"><?=$lot_items[$i]['price'];?><b class="rub">р</b></span>
+                            <span class="lot__cost"><?=$lot_item['price'];?><b class="rub">р</b></span>
                         </div>
 
                         <div class="lot__timer timer">
@@ -166,7 +165,7 @@ $lot_items = array(
                 </div>
             </li>
 
-            <?php } ?>
+            <?php endforeach; ?>
         </ul>
     </section> <!-- end lots -->
 </main>
