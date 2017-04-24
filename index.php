@@ -119,7 +119,7 @@ $lot_items = array(
             <li class="promo__item promo__item--tools">
                 <a class="promo__link" href="all-lots.html">Инструменты</a>
             </li>
-            
+
             <li class="promo__item promo__item--other">
                 <a class="promo__link" href="all-lots.html">Разное</a>
             </li>
