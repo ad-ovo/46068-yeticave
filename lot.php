@@ -1,6 +1,4 @@
 <?php
-
-    // ставки пользователей, которыми надо заполнить таблицу
     $bets = [
         ['name' => 'Иван', 'price' => 11500, 'ts' => strtotime('-' . rand(1, 50) .' minute')],
         ['name' => 'Константин', 'price' => 11000, 'ts' => strtotime('-' . rand(1, 18) .' hour')],
@@ -145,8 +143,7 @@
 
                 <div class="history">
                     <h3>История ставок (<span>4</span>)</h3>
-
-                    <!-- заполните эту таблицу данными из массива $bets-->
+                    
                     <?php foreach( $bets as $bet ) :?>
                     <table class="history__list">
                         <tr class="history__item">
