@@ -11,12 +11,10 @@
 
         if ($time_diff >= 24 ) {
             $bid_time = date('d.m.y' . ' в ' . 'H:i', $ts);
+        } else if ( $time_diff < 1 ) {
+            $bid_time = date('i' . ' минут назад');
         } else {
-            if ( $time_diff < 1 ) {
-                $bid_time = date('i' . ' минут назад');
-            } else {
-                $bid_time = date('H' . ' часов назад');
-            }
+            $bid_time = date('H' . ' часов назад');
         }
 
         return $bid_time;
