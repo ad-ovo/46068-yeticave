@@ -22,7 +22,7 @@ function getTime($ts) {
         default:
             $bid_time = date('H' . ' часов назад');
     }
-    
+
     return $bid_time;
 }
 

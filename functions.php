@@ -10,9 +10,9 @@
             extract($data);
             include_once($file_path);
             ob_get_flush();
-        } else {
-            return '';
         }
+
+        return '';
     }
 
 ?>
