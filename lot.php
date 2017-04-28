@@ -3,8 +3,6 @@
 include_once('data.php');
 include_once('functions.php');
 
-$page_title = 'DC Ply Mens 2016/2017 Snowboard';
-
 $bids = [
     ['name' => 'Иван', 'price' => 11500, 'ts' => strtotime('-' . rand(1, 50) .' minute')],
     ['name' => 'Константин', 'price' => 11000, 'ts' => strtotime('-' . rand(1, 18) .' hour')],
@@ -30,23 +28,18 @@ function getTime($ts) {
 }
 
 $lot_item = '';
-
 $lot_index = $_GET['id'];
 
-/* Выдает в результате сам индекс */
-/*foreach ($_GET as $current) {
-    $lot_item = $current;
-}*/
-
-/* Выдает в результате пустую строку */
 foreach ($lot_items as $key => $value) {
-    if ($value == $lot_index) {
-        $lot_item = $key;
+    if ($value['id'] == $lot_index) {
+        $lot_item = $value;
+    } else {
+        http_response_code(404);
+        die();
     }
 }
 
 $data = [
-    'page_title' => $page_title,
     'bids' => $bids,
     'lot_item' => $lot_item
 ];

@@ -28,12 +28,12 @@
     </nav>
 
     <section class="lot-item container">
-        <h2><?= var_dump($lot_item['name']);?></h2>
+        <h2><?=$lot_item['name'];?></h2>
 
         <div class="lot-item__content">
             <div class="lot-item__left">
                 <div class="lot-item__image">
-                    <img src="<?=$lot_item['imgURL'];?>" width="730" height="548" alt="<?=$lot_item['name'];?>">
+                    <img src="<?=$lot_item['imgUrl'];?>" width="730" height="548" alt="<?=$lot_item['name'];?>">
                 </div>
 
                 <p class="lot-item__category">Категория: <span><?=$lot_item['category'];?></span></p>
