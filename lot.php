@@ -12,14 +12,17 @@ $bids = [
 function getTime($ts) {
     $time_diff = (time() - $ts) / 3600;
 
-    if ($time_diff >= 24 ) {
-        $bid_time = date('d.m.y' . ' в ' . 'H:i', $ts);
-    } else if ( $time_diff < 1 ) {
-        $bid_time = date('i' . ' минут назад');
-    } else {
-        $bid_time = date('H' . ' часов назад');
+    switch ($time_diff) {
+        case $time_diff >= 24:
+            $bid_time = date('d.m.y' . ' в ' . 'H:i', $ts);
+            break;
+        case $time_diff < 1:
+            $bid_time = date('i' . ' минут назад');
+            break;
+        default:
+            $bid_time = date('H' . ' часов назад');
     }
-
+    
     return $bid_time;
 }
 
