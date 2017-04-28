@@ -1,5 +1,8 @@
 <?php
 
+include_once('data.php');
+include_once('functions.php');
+
 $page_title = 'DC Ply Mens 2016/2017 Snowboard';
 
 $bids = [
@@ -26,12 +29,27 @@ function getTime($ts) {
     return $bid_time;
 }
 
+$lot_item = '';
+
+$lot_index = $_GET['id'];
+
+/* Выдает в результате сам индекс */
+/*foreach ($_GET as $current) {
+    $lot_item = $current;
+}*/
+
+/* Выдает в результате пустую строку */
+foreach ($lot_items as $key => $value) {
+    if ($value == $lot_index) {
+        $lot_item = $key;
+    }
+}
+
 $data = [
     'page_title' => $page_title,
-    'bids' => $bids
+    'bids' => $bids,
+    'lot_item' => $lot_item
 ];
-
-include_once('functions.php');
 
 ?>
 

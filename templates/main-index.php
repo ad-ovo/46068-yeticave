@@ -48,13 +48,17 @@
 
                 <li class="lots__item lot">
                     <div class="lot__image">
-                        <img src="<?=$lot_item['imgUrl'];?>" width="350" height="260" alt="Сноуборд">
+                        <img src="<?=$lot_item['imgUrl'];?>" width="350" height="260" alt="<?=$lot_item['name'];?>">
                     </div>
 
                     <div class="lot__info">
                         <span class="lot__category"><?=$lot_item['category']?></span>
 
-                        <h3 class="lot__title"><a class="text-link" href=""><?=$lot_item['name'];?></a></h3>
+                        <h3 class="lot__title">
+                            <a class="text-link" href="/lot?id=<?=$lot_item['id'] . '/' .  preg_replace('/\s+/', '-', $lot_item['name']);?>">
+                                <?=$lot_item['name'];?>
+                            </a>
+                        </h3>
 
                         <div class="lot__state">
                             <div class="lot__rate">
