@@ -33,10 +33,12 @@ $lot_index = $_GET['id'];
 foreach ($lot_items as $key => $value) {
     if ($value['id'] == $lot_index) {
         $lot_item = $value;
-    } else {
-        http_response_code(404);
-        die();
     }
+}
+
+if ($lot_item['id'] != $lot_index) {
+    http_response_code(404);
+    die();
 }
 
 $data = [
