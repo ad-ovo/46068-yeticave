@@ -50,8 +50,8 @@ $data = [
 
 <?php
 
-echo createTemplate('templates/header.php', $data);
-echo createTemplate('templates/main-lot.php', $data);
-echo createTemplate('templates/footer.php', $data);
+createTemplate('templates/header.php', $data);
+createTemplate('templates/main-lot.php', $data);
+createTemplate('templates/footer.php', $data);
 
 ?>
