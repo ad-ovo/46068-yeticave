@@ -2,12 +2,7 @@
 
 function createTemplate($file_path, $data) {
     if(!!file_exists($file_path)) {
-        foreach($data as $key => $value) {
-            /*echo var_dump($value);
-            echo var_dump($data[$value]);*/
-            $data[$key] = validateXSSData($value);
-            /*echo var_dump($data[$key]);*/
-        }
+        $data = validateXSSData($data);
 
         ob_start();
         extract($data);
@@ -18,7 +13,6 @@ function createTemplate($file_path, $data) {
     return '';
 }
 
-
 function validateXSSData($data) {
     if (is_array($data)) {
         foreach ($data as $key => $value) {
@@ -26,14 +20,6 @@ function validateXSSData($data) {
         }
         return $data;
     }
-    /*if (is_array($data)) {
-        foreach ($data as $key) {
-            foreach ($key as $value) {
-                $data = array_map('htmlspecialchars', $value);
-                var_dump($data)
-            }
-        }
-    }*/
 
     return htmlspecialchars($data);
 }
