@@ -19,11 +19,13 @@ $data = [
 
 ?>
 
-<?php
+<?=createTemplate('templates/globals/header.php', $data);?>
 
-createTemplate('templates/header.php', $data);
-createTemplate('templates/main-index.php', $data);
-createTemplate('templates/footer.php', $data);
+<main>
+    <div class="container">
+        <?=createTemplate('templates/content/index.php', $data);?>
+    </div>
+</main>
 
-?>
+<?=createTemplate('templates/globals/footer.php', $data);?>
 

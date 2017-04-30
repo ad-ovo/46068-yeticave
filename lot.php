@@ -48,10 +48,11 @@ $data = [
 
 ?>
 
-<?php
+<?=createTemplate('templates/globals/header.php', $data);?>
 
-createTemplate('templates/header.php', $data);
-createTemplate('templates/main-lot.php', $data);
-createTemplate('templates/footer.php', $data);
+<main>
+    <?=createTemplate('templates/globals/nav.php', $data);?>
+    <?=createTemplate('templates/content/lot.php', $data);?>
+</main>
 
-?>
+<?=createTemplate('templates/globals/footer.php', $data);?>

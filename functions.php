@@ -26,6 +26,14 @@ function validateXSSData($data) {
         }
         return $data;
     }
+    /*if (is_array($data)) {
+        foreach ($data as $key) {
+            foreach ($key as $value) {
+                $data = array_map('htmlspecialchars', $value);
+                var_dump($data)
+            }
+        }
+    }*/
 
     return htmlspecialchars($data);
 }
