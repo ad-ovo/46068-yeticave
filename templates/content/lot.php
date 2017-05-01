@@ -1,42 +1,14 @@
-<main>
-    <nav class="nav">
-        <ul class="nav__list container">
-            <li class="nav__item">
-                <a href="">Доски и лыжи</a>
-            </li>
-
-            <li class="nav__item">
-                <a href="">Крепления</a>
-            </li>
-
-            <li class="nav__item">
-                <a href="">Ботинки</a>
-            </li>
-
-            <li class="nav__item">
-                <a href="">Одежда</a>
-            </li>
-
-            <li class="nav__item">
-                <a href="">Инструменты</a>
-            </li>
-
-            <li class="nav__item">
-                <a href="">Разное</a>
-            </li>
-        </ul>
-    </nav>
 
     <section class="lot-item container">
-        <h2>DC Ply Mens 2016/2017 Snowboard</h2>
+        <h2><?=$lot_item['name'];?></h2>
 
         <div class="lot-item__content">
             <div class="lot-item__left">
                 <div class="lot-item__image">
-                    <img src="img/lot-image.jpg" width="730" height="548" alt="Сноуборд">
+                    <img src="<?=$lot_item['imgUrl'];?>" width="730" height="548" alt="<?=$lot_item['name'];?>">
                 </div>
 
-                <p class="lot-item__category">Категория: <span>Доски и лыжи</span></p>
+                <p class="lot-item__category">Категория: <span><?=$lot_item['category'];?></span></p>
                 <p class="lot-item__description">Легкий маневренный сноуборд, готовый дать жару в любом парке, растопив
                     снег
                     мощным щелчкоми четкими дугами. Стекловолокно Bi-Ax, уложенное в двух направлениях, наделяет этот
@@ -59,7 +31,7 @@
                     <div class="lot-item__cost-state">
                         <div class="lot-item__rate">
                             <span class="lot-item__amount">Текущая цена</span>
-                            <span class="lot-item__cost">11 500</span>
+                            <span class="lot-item__cost"><?=$lot_item['price'];?></span>
                         </div>
 
                         <div class="lot-item__min-cost">
@@ -93,4 +65,4 @@
             </div> <!-- end lot-item__right -->
         </div> <!--  end lot-item__content -->
     </section>
-</main>
+
