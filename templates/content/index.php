@@ -55,7 +55,7 @@
                         <span class="lot__category"><?=$lot_item['category']?></span>
 
                         <h3 class="lot__title">
-                            <a class="text-link" href="/lot?id=<?=$lot_item['id'];?>&amp;name=<?=preg_replace('/\s+/', '-', $lot_item['name']);?>">
+                            <a class="text-link" href="/lot.php?id=<?=$lot_item['id'];?>&amp;name=<?=preg_replace('/\s+/', '-', $lot_item['name']);?>">
                                 <?=$lot_item['name'];?>
                             </a>
                         </h3>
