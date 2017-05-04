@@ -1,25 +1,42 @@
+<main>
+    <nav class="nav">
+        <ul class="nav__list container">
+            <li class="nav__item">
+                <a href="">Доски и лыжи</a>
+            </li>
 
+            <li class="nav__item">
+                <a href="">Крепления</a>
+            </li>
+
+            <li class="nav__item">
+                <a href="">Ботинки</a>
+            </li>
+
+            <li class="nav__item">
+                <a href="">Одежда</a>
+            </li>
+
+            <li class="nav__item">
+                <a href="">Инструменты</a>
+            </li>
+
+            <li class="nav__item">
+                <a href="">Разное</a>
+            </li>
+        </ul>
+    </nav>
     <section class="lot-item container">
-        <h2><?=$lot_item['name'];?></h2>
+        <h2><?= $lot_item['name']; ?></h2>
 
         <div class="lot-item__content">
             <div class="lot-item__left">
                 <div class="lot-item__image">
-                    <img src="<?=$lot_item['imgUrl'];?>" width="730" height="548" alt="<?=$lot_item['name'];?>">
+                    <img src="<?=$lot_item['img'];?>" width="730" height="548" alt="<?=$lot_item['name'];?>">
                 </div>
 
-                <p class="lot-item__category">Категория: <span><?=$lot_item['category'];?></span></p>
-                <p class="lot-item__description">Легкий маневренный сноуборд, готовый дать жару в любом парке, растопив
-                    снег
-                    мощным щелчкоми четкими дугами. Стекловолокно Bi-Ax, уложенное в двух направлениях, наделяет этот
-                    снаряд
-                    отличной гибкостью и отзывчивостью, а симметричная геометрия в сочетании с классическим прогибом
-                    кэмбер
-                    позволит уверенно держать высокие скорости. А если к концу катального дня сил совсем не останется,
-                    просто
-                    посмотрите на Вашу доску и улыбнитесь, крутая графика от Шона Кливера еще никого не оставляла
-                    равнодушным.
-                </p>
+                <p class="lot-item__category">Категория: <span><?= $lot_item['category']; ?></span></p>
+                <p class="lot-item__description"><?=$lot_item['description'];?></p>
             </div> <!-- end lot-item__left -->
 
             <div class="lot-item__right">
@@ -35,7 +52,7 @@
                         </div>
 
                         <div class="lot-item__min-cost">
-                            Мин. ставка <span>12 000 р</span>
+                            Мин. ставка <span><?=$lot_item['rate'];?></span>
                         </div>
                     </div>
 
@@ -65,4 +82,4 @@
             </div> <!-- end lot-item__right -->
         </div> <!--  end lot-item__content -->
     </section>
-
+</main>

@@ -1,31 +1,7 @@
 <?php
 
-include_once('data.php');
-include_once('functions.php');
-
-$bids = [
-    ['name' => 'Иван', 'price' => 11500, 'ts' => strtotime('-' . rand(1, 50) .' minute')],
-    ['name' => 'Константин', 'price' => 11000, 'ts' => strtotime('-' . rand(1, 18) .' hour')],
-    ['name' => 'Евгений', 'price' => 10500, 'ts' => strtotime('-' . rand(25, 50) .' hour')],
-    ['name' => 'Семён', 'price' => 10000, 'ts' => strtotime('last week')]
-];
-
-function getTime($ts) {
-    $time_diff = (time() - $ts) / 3600;
-
-    switch ($time_diff) {
-        case $time_diff >= 24:
-            $bid_time = date('d.m.y' . ' в ' . 'H:i', $ts);
-            break;
-        case $time_diff < 1:
-            $bid_time = date('i' . ' минут назад');
-            break;
-        default:
-            $bid_time = date('H' . ' часов назад');
-    }
-
-    return $bid_time;
-}
+include_once ('data.php');
+include_once ('functions.php');
 
 $lot_item = '';
 $lot_index = $_GET['id'];
@@ -42,17 +18,13 @@ if ($lot_item['id'] != $lot_index) {
 }
 
 $data = [
+    'lot_categories' => $lot_categories,
     'bids' => $bids,
     'lot_item' => $lot_item
 ];
 
 ?>
 
-<?=createTemplate('templates/globals/header.php', $data);?>
-
-<main>
-    <?=createTemplate('templates/globals/nav.php', $data);?>
-    <?=createTemplate('templates/content/lot.php', $data);?>
-</main>
-
-<?=createTemplate('templates/globals/footer.php', $data);?>
+<?= createTemplate('templates/globals/header.php', $data); ?>
+<?= createTemplate('templates/content/lot.php', $data); ?>
+<?= createTemplate('templates/globals/footer.php', $data); ?>

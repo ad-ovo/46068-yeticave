@@ -21,7 +21,7 @@
             <input class="main-header__search-btn" type="submit" name="find" value="Найти">
         </form>
 
-        <a class="main-header__add-lot button" href="">Добавить лот</a>
+        <a class="main-header__add-lot button" href="../../add.php">Добавить лот</a>
 
         <nav class="user-menu">
             <ul class="user-menu__list">

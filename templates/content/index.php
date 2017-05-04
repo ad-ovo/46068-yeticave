@@ -1,4 +1,4 @@
-
+<main class="container">
     <section class="promo">
         <h2 class="promo__title">Нужен стафф для катки?</h2>
         <p class="promo__text">На нашем интернет-аукционе ты найдёшь самое эксклюзивное сноубордическое и горнолыжное снаряжение.</p>
@@ -48,7 +48,7 @@
 
                 <li class="lots__item lot">
                     <div class="lot__image">
-                        <img src="<?=$lot_item['imgUrl'];?>" width="350" height="260" alt="<?=$lot_item['name'];?>">
+                        <img src="<?=$lot_item['img'];?>" width="350" height="260" alt="<?=$lot_item['name'];?>">
                     </div>
 
                     <div class="lot__info">
@@ -76,4 +76,5 @@
             <?php endforeach; ?>
         </ul>
     </section> <!-- end lots -->
+</main>
 
